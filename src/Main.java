@@ -1,13 +1,17 @@
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-        TwoSum ts = new TwoSum();
-       var result= ts.twoSum(new int[]{3,2,4},6);
-        System.out.printf(result.toString());
+        System.out.println("Hello and welcome!");
+       var sl = new Solution();
+
+        var result = sl.productExceptSelf(new int[]{1,2,3,4,5});
+        System.out.println(new Gson().toJson(result));
         // Press Shift+F10 or click the green arrow button in the gutter to run the code.
         for (int i = 1; i <= 5; i++) {
 
