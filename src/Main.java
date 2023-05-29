@@ -10,7 +10,7 @@ public class Main {
         System.out.println("Hello and welcome!");
        var sl = new Solution();
 
-        var result = sl.productExceptSelf(new int[]{1,2,3,4,5});
+        var result = sl.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
         System.out.println(new Gson().toJson(result));
         // Press Shift+F10 or click the green arrow button in the gutter to run the code.
         for (int i = 1; i <= 5; i++) {
