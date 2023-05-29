@@ -84,5 +84,17 @@ public class Solution {
         return result;
     }
 
+    public int findMin(int[] nums) {
+        int l = nums[0], r = nums[nums.length - 1];
+        int minResult = l < r ? l : r;
+        for (int i = 0; i <= nums.length / 2; i++) {
+            l = nums[i];
+            r = nums[nums.length - 1 - i];
+            var cache = l < r ? l : r;
+            minResult = Math.min(cache, minResult);
+        }
+        return minResult;
+    }
+
 
 }
