@@ -54,7 +54,7 @@ public class Solution {
         }
         return ans;
     }
-    
+
     public int maxSubArray(int[] nums) {
         int max = Integer.MIN_VALUE, sum = 0;
         for (int x=0;x<nums.length;x++){
@@ -66,4 +66,23 @@ public class Solution {
         return max;
 
     }
+
+    public int maxProduct(int[] nums) {
+        int max = nums[0], min = nums[0], result = nums[0];
+        for (int i =1;i<nums.length;i++)
+        {
+            if(nums[i]<0){
+                //swap
+                int cache = max;
+                max= min;
+                min=cache;
+            }
+            max=Math.max(nums[i],max*nums[i]);
+            min= Math.min(nums[i],min*nums[i]);
+            result=Math.max(max,result);
+        }
+        return result;
+    }
+
+
 }
