@@ -133,4 +133,24 @@ public class Solution {
 
     }
 
+    public int maxArea(int[] height) {
+        int currentMax = Integer.MIN_VALUE;
+        int lIdx = 0;
+        int rIdx = height.length - 1;
+        while (lIdx < rIdx) {
+            int spacing = Math.abs(lIdx - rIdx);
+            int l = height[lIdx];
+            int r = height[rIdx];
+            int sum = 0;
+            int minHeight = Math.min(l, r);
+            sum = spacing * minHeight;
+            if (sum > currentMax) currentMax = sum;
+            if (l < r)
+                lIdx++;
+            else
+                rIdx--;
+        }
+
+        return currentMax;
+    }
 }
