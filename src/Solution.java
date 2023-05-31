@@ -96,5 +96,16 @@ public class Solution {
         return minResult;
     }
 
+    public int search(int[] nums, int target) {
+        int l = nums[0], r = nums[nums.length - 1];
+        for (int i = 0; i <= nums.length / 2; i++) {
+            l = nums[i];
+           if(l==target)  return i;
+            r = nums[nums.length - 1 - i];
+            if(r==target)  return nums.length - 1 - i;
+        }
+        return -1;
+    }
+
 
 }
