@@ -1,6 +1,5 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Solution {
     //Best Time to Buy and Sell Stock
@@ -107,5 +106,31 @@ public class Solution {
         return -1;
     }
 
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        Set<List<Integer>> ans = new HashSet<>();
+        for (int i = 0; i <= nums.length - 2; i++) {
+            int l = i + 1, r = nums.length - 1;
+            while (l < r) {
+                int sum = nums[i] + nums[l] + nums[r];
+                if (sum == 0) {
+                    ArrayList<Integer> sp = new ArrayList<>();
+                    sp.add(nums[i]);
+                    sp.add(nums[l]);
+                    sp.add(nums[r]);
+                    ans.add(sp);
+
+                    l++;
+                } else if (sum > 0) {
+                    r--;
+                } else {
+                    l++;
+                }
+
+            }
+        }
+        return new ArrayList<>(ans);
+
+    }
 
 }
